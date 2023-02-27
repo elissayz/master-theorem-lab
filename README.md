@@ -69,7 +69,7 @@ The purpose of this lab is to both get you familiar with using these non-github 
             $$T(n) = 1*T(n/3) + 1$$
 
         1. The solution to the recurrence you wrote above as provided by the master theorem:
-            $$T(n) = \Theta()$$
+            $$T(n) = \Theta(log(n))$$
 
         (Feel free to check your answers with me before moving on.)
     
@@ -82,29 +82,29 @@ The purpose of this lab is to both get you familiar with using these non-github 
 
         |                | `binary_search`           | `trinary_search`      |
         | -------------- | ------------------------- | --------------------- | 
-        | `n=2**0`       |  0.802 usec               |                       |
-        | `n=2**1`       |  1.43 usec                |                       |
-        | `n=2**2`       |  2.04 usec                |                       |
-        | `n=2**3`       |  2.67 usec                |                       |
-        | `n=2**4`       |  3.02 usec                |                       |
-        | `n=2**5`       |  3.56 usec                |                       |
-        | `n=2**6`       |  3.91 usec                |                       |
-        | `n=2**7`       |  4.61 usec                |                       |
-        | `n=2**8`       |   5.08 usec               |                       |
-        | `n=2**9`       |   5.83 usec               |                       |
-        | `n=2**10`      |   6.19 usec               |                       |
-        | `n=2**11`      |   6.61 usec               |                       |
-        | `n=2**12`      |   7.51 usec               |                       |
-        | `n=2**13`      |   7.95 usec               |                       |
-        | `n=2**14`      |   8.76 usec               |                       |
-        | `n=2**15`      |   9.09 usec               |                       |
-        | `n=2**16`      |   10.4 usec               |                       |
-        | `n=2**17`      |   10.7 usec               |                       |
-        | `n=2**18`      |   10.9 usec               |                       |
-        | `n=2**19`      |   11.5 usec               |                       |
-        | `n=2**20`      |   11.8 usec               |                       |
-        | `n=2**21`      |   12.5 usec               |                       |
-        | `n=2**22`      |   12.9 usec               |                       |
+        | `n=2**0`       |  0.802 usec               |      1.73 usec        |
+        | `n=2**1`       |  1.43 usec                |      3.24 usec        |
+        | `n=2**2`       |  2.04 usec                |      3.39 usec        |
+        | `n=2**3`       |  2.67 usec                |      3.50 usec        |
+        | `n=2**4`       |  3.02 usec                |      4.01 usec        |
+        | `n=2**5`       |  3.56 usec                |      5.78 usec        |
+        | `n=2**6`       |  3.91 usec                |      6.36 usec        |
+        | `n=2**7`       |  4.61 usec                |      4.8 usec         |
+        | `n=2**8`       |   5.08 usec               |      5.99 usec        |
+        | `n=2**9`       |   5.83 usec               |      6.34 usec        |
+        | `n=2**10`      |   6.19 usec               |      6.99 usec        |
+        | `n=2**11`      |   6.61 usec               |      7.58 usec        |
+        | `n=2**12`      |   7.51 usec               |      8.49 usec        |
+        | `n=2**13`      |   7.95 usec               |      10.8 usec        |
+        | `n=2**14`      |   8.76 usec               |      12.9 usec        |
+        | `n=2**15`      |   9.09 usec               |      14.0 usec        |
+        | `n=2**16`      |   10.4 usec               |      15.6 usec        |
+        | `n=2**17`      |   10.7 usec               |      17.4 usec        |
+        | `n=2**18`      |   10.9 usec               |      16 usec          |
+        | `n=2**19`      |   11.5 usec               |      18.5 usec        |
+        | `n=2**20`      |   11.8 usec               |      14 usec          |
+        | `n=2**21`      |   12.5 usec               |      17.4 usec        |
+        | `n=2**22`      |   12.9 usec               |     19.2 usec        |
 
 
 1. Use the master theorem to solve the following recurrence relations,
@@ -113,17 +113,17 @@ The purpose of this lab is to both get you familiar with using these non-github 
 
     | recurrence           | solution                       | practical application                     |
     | -------------------- | ------------------------------ | ----------------------------------------- |
-    | T(n) = T(n/2) + n    | $\Theta(                    )$ | runtime of the bad binary search          |
-    | T(n) = T(n/2) + 1    | $\Theta(                    )$ | runtime of the correct binary search      |
-    | T(n) = T(n/3) + 1    | $\Theta(                    )$ | runtime of "trinary search"               |
-    | T(n) = 2T(n/2) + 1   | $\Theta(                    )$ | runtime for [finding the median of an unsorted list](https://en.wikipedia.org/wiki/Quickselect) |
-    | T(n) = 2T(n/2) + n   | $\Theta(                    )$ | runtime of merge sort                     |
-    | T(n) = 3T(n/3) + n   | $\Theta(                    )$ | runtime of a trinary merge sort           |
-    | T(n) = T(n/2) + n^2  | $\Theta(                    )$ |                                           |
-    | T(n) = 2T(n/2) + n^2 | $\Theta(                    )$ |                                           |
-    | T(n) = 3T(n/2) + n^2 | $\Theta(                    )$ |                                           |
-    | T(n) = 3T(n/2) + n   | $\Theta(                    )$ | runtime of [Karatsuba's integer multiplication algorithm](https://en.wikipedia.org/wiki/Karatsuba_algorithm); HINT: Case 1 |
-    | T(n) = 7T(n/2) + n^2 | $\Theta(                    )$ | runtime of [Strassen's matrix multiplication algorithm](https://en.wikipedia.org/wiki/Strassen_algorithm) |
+    | T(n) = T(n/2) + n    | $\Theta(n                   )$ | runtime of the bad binary search          |
+    | T(n) = T(n/2) + 1    | $\Theta( log(n)             )$ | runtime of the correct binary search      |
+    | T(n) = T(n/3) + 1    | $\Theta( log(n)             )$ | runtime of "trinary search"               |
+    | T(n) = 2T(n/2) + 1   | $\Theta( n                  )$ | runtime for [finding the median of an unsorted list](https://en.wikipedia.org/wiki/Quickselect) |
+    | T(n) = 2T(n/2) + n   | $\Theta( nlog(n)            )$ | runtime of merge sort                     |
+    | T(n) = 3T(n/3) + n   | $\Theta( nlog(n)            )$ | runtime of a trinary merge sort           |
+    | T(n) = T(n/2) + n^2  | $\Theta( n^2                )$ |                                           |
+    | T(n) = 2T(n/2) + n^2 | $\Theta( n^2                )$ |                                           |
+    | T(n) = 3T(n/2) + n^2 | $\Theta(n^2 )$ |                                           |
+    | T(n) = 3T(n/2) + n   | $\Theta(   n<sup>log<sub>2</sub>3</sup> )$ | runtime of [Karatsuba's integer multiplication algorithm](https://en.wikipedia.org/wiki/Karatsuba_algorithm); HINT: Case 1 |
+    | T(n) = 7T(n/2) + n^2 | $\Theta(n<sup>log<sub>2</sub>7</sup> )$ | runtime of [Strassen's matrix multiplication algorithm](https://en.wikipedia.org/wiki/Strassen_algorithm) |
 
 1. Upload your changes to github (and not gitlab) by using the following steps.
 
